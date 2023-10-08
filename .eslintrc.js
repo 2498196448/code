@@ -20,6 +20,8 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    // semi: ['error'],
+    'no-console': 'error',
+    // 'no-console': process.env.NODE_ENV === 'development' ? 'off' : 'error',
+    'no-alert': process.env.NODE_ENV === 'development' ? 'off' : 'error',
   },
 };
