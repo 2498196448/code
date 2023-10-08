@@ -1,14 +1,14 @@
-import { ConfigProvider, Button } from 'antd'
-import './App.css'
-import React, { useState } from 'react'
-import { getLoginQrCKey } from './api/index'
+import { ConfigProvider, Button } from 'antd';
+import './App.css';
+import React, { useState } from 'react';
+import { getLoginQrCKey } from './api/index';
 
 function App() {
   const [theme, setTheme] = useState({
     token: {
       colorPrimary: 'pink',
     },
-  })
+  });
   const fn = () => {
     getLoginQrCKey()
       .then(() => {
@@ -16,8 +16,8 @@ function App() {
       })
       .catch(() => {
         // console.log(err)
-      })
-  }
+      });
+  };
   return (
     <ConfigProvider theme={theme}>
       <h1 className="text-[26px] text-[green] text-center">测试页面</h1>
@@ -31,13 +31,13 @@ function App() {
             token: {
               colorPrimary: 'skyblue',
             },
-          })
+          });
         }}
       >
         修改主题色
       </button>
     </ConfigProvider>
-  )
+  );
 }
 
-export default App
+export default App;
